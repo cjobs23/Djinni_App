@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.djinni.cjobs.webtoapp">
+
+    <!-- network permissions -->
+    <application
+        android:name="com.djinni.cjobs.webtoapp.app.MyApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:requestRawExternalStorageAccess="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name="com.djinni.cjobs.webtoapp.activity.SplashActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.djinni.cjobs.webtoapp.activity.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name="com.djinni.cjobs.webtoapp.activity.SettingsActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name="com.djinni.cjobs.webtoapp.activity.CustomUrlActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name="com.djinni.cjobs.webtoapp.activity.NotificationListActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.djinni.cjobs.webtoapp.activity.NotificationDetailsActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.djinni.cjobs.webtoapp.activity.AboutDevActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_ad_id" />
+
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_ic_notification" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name="com.djinni.cjobs.webtoapp.notification.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- SD Card Permission -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>
